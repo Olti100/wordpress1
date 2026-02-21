@@ -26,16 +26,39 @@ get_header(); ?>
         $email = get_field("email");
         $linkedin = get_field("linkedin");?>
          
-         <li class = "team-card">
+       <li class = "team-card">
             <div class = "team-photo">
                 <?php if(has_post_thumbnail()){
                     the_post_thumbnail("team_avatar", ["alt"=>get_the_title()]);
 
                 }?>
-
-                <div class = "team-info">
+            </div>    
+            <div class = "team-info">
                     <h3 class="team-name">
                         <?php the_title(); ?>
                     </h3>
-                    <?php if ($role): ?>
-                        <p class="team-role"><?php echo esc_html($role); ?></p><?php endif; ?>
+                    <?php if ($role): ?><p class="team-role"><?php echo esc_html($role); ?></p><?php endif; ?>
+
+
+                    <?php if(has_excerpt())  :?>
+                        <p class="team-bio"><?php the_excerpt(); ?></p>
+                    <?php elseif ($shortbio): ?>
+                        <p class="team-bio"><?php echo esc_html($shortbio); ?></p>
+                    <?php endif; ?>
+                    
+                    <?php if ($email || $linkedin):?>
+                        <p class="team-links">
+                            <?php if ($email): ?><a href="mailto:<?php echo antispambot($email); ?>" class="team-email">Email</a><?php endif; ?>
+                            <?php if ($linkedin): ?><a href="<?php echo esc_url($linkedin); ?>" class="team-linkedin" target="_blank" rel="noopener">LinkedIn</a><?php endif; ?>
+                       </p>
+                    <?php endif; ?>
+           </div>
+        </li>
+       <?php endwhile; ?>
+  </ul>   
+  <?php else: ?>
+    <p>No team members yet- Add posts in the "TEAM" category</p>
+    <?php endif; ?>
+ </main>
+ 
+<?php get_footer(); ?>
