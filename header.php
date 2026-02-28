@@ -4,12 +4,10 @@
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php wp_head(); ?>
-
-    <title>Document</title>
+    <title><?php bloginfo('name'); ?></title>
 </head>
-
+<body id="top" <?php body_class(); ?>>
 <header class="site-header">
-<body id= "top"<?php body_class() ?>>
     <a class = "site-title" href="<?php echo esc_url(home_url('/')); ?>">
         <?php bloginfo('name'); ?>
     </a>

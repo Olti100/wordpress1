@@ -10,7 +10,7 @@
                     <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                 </h2>
             
-                <p class = "blog-item__excerpt">
+                <p class="blog-item-excerpt">
                     <?php the_excerpt();?>
                 </p>    
            </article>  

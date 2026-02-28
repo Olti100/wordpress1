@@ -2,10 +2,20 @@
 
 <main class="single-post">
     <?php if (have_posts()): while (have_posts()): the_post(); ?>
-    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-       <aticle <?php post_class("post-card"); ?>>
+       <article <?php post_class("post-card"); ?>>
         <?php if (has_post_thumbnail()): ?>
             <div class="post-thumb">
                 <?php the_post_thumbnail("large"); ?>
             </div>
-        <?php endif; ?>    
+        <?php endif; ?>
+        <div class="post-content">
+            <h1 class="post-title"><?php the_title(); ?></h1>
+            <div class="post-body">
+                <?php the_content(); ?>
+            </div>
+        </div>
+       </article>
+    <?php endwhile; endif; ?>
+</main>
+
+<?php get_footer(); ?>

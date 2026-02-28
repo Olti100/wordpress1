@@ -12,10 +12,10 @@ get_header(); ?>
   $team = new WP_Query([
     "post_type" => "post",
     "posts_per_page" => -1,
-    "category_name" => "team"
+    "category_name" => "team",
     "orderby" => "title",
     "order" => "ASC"
-  ])
+  ]);
 ?>
 
 <?php if ($team->have_posts()): ?>

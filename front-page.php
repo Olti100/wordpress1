@@ -2,9 +2,9 @@
   <main>
     <section class="hero">
         <img class="hero-banner"
-        src="<?php echo esc_url(get_theme_file_url("iamges/screenshot.png")); ?>"
+        src="<?php echo esc_url(get_theme_file_url("images/screenshot.png")); ?>"
         alt="site Banner">
-   </section>    
+    </section>    
 
    <section class="features">
     <br>
@@ -37,7 +37,7 @@
 <br>
 
 <section class="section-pad">
-    <h2 id+="curricula-heading">Curriculum by age</h2>
+    <h2 id="curricula-heading">Curriculum by age</h2>
     <br>
 
     <ul class="curricula-grid">
